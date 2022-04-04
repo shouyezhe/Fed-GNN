@@ -13,53 +13,13 @@ from和to表示的是节点，cost表示的是两个节点之间的直线距离�
 
 #GNN模型构建：
 一个好的习惯是先把整体的网络框架搭建好，之后再去实现具体的模型，这样做的好处是在后面更换模型的时候只需要改一两行代码即可。
-以上使用了GCN, ChebNet, GAT三种图卷积来预测交通流量，虽然考虑到了空间的影响，但是没有考虑时序上的影响，
+以上使用了GCN图卷积来预测交通流量，虽然考虑到了空间的影响，但是没有考虑时序上的影响，
 所以能否加入RNN模型来考虑时序影响，进一步提高预测效果？
 一些模型比如：STGCN, ASTGCN, DCRNN等，都是加入了时间的影响，值得借鉴．
 
 #无联邦学习实验结果（运行traffic_prediction文件）：
-基于数据pems04：307个节点
-chebnet   epoch=10
-Test Loss: 0.0453
-Performance:  MAE 18.32    MAPE 0.13%    RMSE 27.76
+基于数据pems07：307个节点
 
-GCN epoch=10
-Test Loss: 0.1395
-Performance:  MAE 34.35    MAPE 0.34%    RMSE 48.44
-
-GAT epoch=10
-Test Loss: 0.1638
-Performance:  MAE 36.70    MAPE 0.41%    RMSE 51.32
-
-基于数据pems08：170个节点
-ChebNet
-Test Loss: 0.0362
-Performance:  MAE 15.04    MAPE 0.09%    RMSE 22.41
-
-GCN
-Test Loss: 0.1863
-Performance:  MAE 35.52    MAPE 0.24%    RMSE 49.69
-
-GAT
-Test Loss: 0.2418
-Performance:  MAE 40.29    MAPE 0.29%    RMSE 56.19
-
-基于数据pems07：883个节点
-GCN epoch=10
-Test Loss: 0.0991
-Performance:  MAE 35.92    MAPE 0.17%    RMSE 53.33
-
-chebnet   epoch=10
-Test Loss: 0.0328
-Performance:  MAE 20.09    MAPE 0.08%    RMSE 30.41
-
-GAT epoch=10
-Test Loss: 0.0958
-Performance:  MAE 34.86    MAPE 0.19%    RMSE 51.20
-
-# 加入联邦学习（运行所有jupyter文件）
-分别是三个模型 三个数据集 两个基准模型MLP CNN
-
-
+# 加入联邦学习（运行jupyter文件）
 
 
