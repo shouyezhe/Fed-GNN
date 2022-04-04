@@ -6,6 +6,9 @@ from torch.utils.data import Dataset
 # =============================================================================
 # 处理成邻接矩阵的程序如下：
 # =============================================================================
+
+
+
 def get_adjacent_matrix(distance_file: str, num_nodes: int, id_file: str = None, graph_type="connect") -> np.array:
     """
     :param distance_file: str, path of csv file to save the distances between nodes.
